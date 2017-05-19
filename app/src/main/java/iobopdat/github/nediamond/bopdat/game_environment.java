@@ -1,13 +1,16 @@
 package iobopdat.github.nediamond.bopdat;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.app.Activity;
 
-public class game_environment extends AppCompatActivity {
+import android.os.Bundle;
+import android.view.Window;
+
+public class game_environment extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_environment);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.setContentView(R.layout.activity_game_environment);
     }
 }
