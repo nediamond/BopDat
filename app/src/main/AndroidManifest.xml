@@ -20,6 +20,9 @@
         <activity android:name=".GameActivity" />
         <activity android:name=".MoveActivity" />
         <activity android:name=".PushDatActivity" />
+        <activity android:name=".PullDatActivity" />
+        <activity android:name=".ShakeDatActivity" />
+        <activity android:name=".LiftDatActivity" />
     </application>
 
 </manifest>
