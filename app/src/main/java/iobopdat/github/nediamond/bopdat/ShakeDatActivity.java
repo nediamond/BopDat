@@ -37,10 +37,6 @@ public class ShakeDatActivity extends BaseMoveActivity{
         linear_acceleration[1] = event.values[1] - gravity[1];
         linear_acceleration[2] = event.values[2] - gravity[2];
 
-
-        ((TextView) findViewById(R.id.commandDisplay1)).setText(Float.toString(linear_acceleration[1]));
-        ((TextView) findViewById(R.id.commandDisplay2)).setText(Float.toString(linear_acceleration[2]));
-
         if (Math.abs(linear_acceleration[0]) > 4) {
             //Intent intent = new Intent();
             setResult(Activity.RESULT_OK);

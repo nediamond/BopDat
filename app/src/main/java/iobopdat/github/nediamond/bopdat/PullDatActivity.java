@@ -38,11 +38,7 @@ public class PullDatActivity extends BaseMoveActivity{
         linear_acceleration[2] = event.values[2] - gravity[2];
 
 
-        ((TextView) findViewById(R.id.commandDisplay1)).setText(Float.toString(linear_acceleration[1]));
-        ((TextView) findViewById(R.id.commandDisplay2)).setText(Float.toString(linear_acceleration[2]));
-
-
-        if (linear_acceleration[1] > 2.5) {
+        if (linear_acceleration[1] > 1.5) {
             //Intent intent = new Intent();
             setResult(Activity.RESULT_OK);
             finish();

@@ -10,46 +10,19 @@
 
     <TextView
         android:id="@+id/commandDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="391dp"
+        android:layout_height="193dp"
         android:text="DEFAULT TEXT"
-        android:textSize="35sp"
+        android:textAlignment="center"
+        android:textSize="51sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="406dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.566" />
+        app:layout_constraintVertical_bias="0.54"
+        tools:layout_editor_absoluteY="241dp" />
 
-    <TextView
-        android:id="@+id/commandDisplay1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="289dp"
-        android:text="DEFAULT TEXT"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1" />
-
-    <TextView
-        android:id="@+id/commandDisplay2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="162dp"
-        android:text="DEFAULT TEXT"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1" />
 </android.support.constraint.ConstraintLayout>

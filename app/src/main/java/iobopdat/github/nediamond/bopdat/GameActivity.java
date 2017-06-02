@@ -16,7 +16,7 @@ public class GameActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.setContentView(R.layout.activity_game_environment);
-        Intent intent = new Intent(GameActivity.this, PullDatActivity.class);
+        Intent intent = new Intent(GameActivity.this, LiftDatActivity.class);
         startActivityForResult(intent,MOVE_PICK);
     }
 
