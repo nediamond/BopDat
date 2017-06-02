@@ -16,19 +16,14 @@ import java.lang.Math;
  * Created by zach_meyer on 5/26/17.
  */
 
-public class MoveActivity extends BaseMoveActivity implements SensorEventListener {
-    private SensorManager mSensorManager;
-    private Sensor mSensor;
+public class MoveActivity extends BaseMoveActivity{
     float[] gravity = new float[3];
     float[] linear_acceleration = new float[3];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.setContentView(R.layout.activity_game_environment);
         ((TextView) findViewById(R.id.commandDisplay)).setText("Move Dat");
-        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mSensorManager.registerListener(this, mSensor , SensorManager.SENSOR_DELAY_NORMAL);
     }
@@ -59,16 +54,5 @@ public class MoveActivity extends BaseMoveActivity implements SensorEventListene
             setResult(Activity.RESULT_OK);
             finish();
         }
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        this.mSensorManager.unregisterListener(this);
     }
 }
