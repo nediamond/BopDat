@@ -41,6 +41,7 @@ public class LiftDatActivity extends BaseMoveActivity{
         if (linear_acceleration[2] < -2.5) {
             //Intent intent = new Intent();
             setResult(Activity.RESULT_OK);
+            this.mSensorManager.unregisterListener(this);
             finish();
         }
     }

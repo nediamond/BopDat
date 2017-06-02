@@ -41,6 +41,7 @@ public class PullDatActivity extends BaseMoveActivity{
         if (linear_acceleration[1] > 1.5) {
             //Intent intent = new Intent();
             setResult(Activity.RESULT_OK);
+            this.mSensorManager.unregisterListener(this);
             finish();
         }
     }

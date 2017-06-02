@@ -40,6 +40,7 @@ public class ShakeDatActivity extends BaseMoveActivity{
         if (Math.abs(linear_acceleration[0]) > 4) {
             //Intent intent = new Intent();
             setResult(Activity.RESULT_OK);
+            this.mSensorManager.unregisterListener(this);
             finish();
         }
     }

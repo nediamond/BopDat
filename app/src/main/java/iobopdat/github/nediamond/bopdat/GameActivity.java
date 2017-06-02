@@ -3,6 +3,7 @@ package iobopdat.github.nediamond.bopdat;
 import android.app.Activity;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.Window;
 import android.widget.TextView;
 import android.content.Intent;
@@ -29,12 +30,14 @@ public class GameActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //wait(1000);
         if(requestCode == MOVE_PICK && resultCode == RESULT_OK){
+            score++;
             startActivityForResult(chooseMove(), MOVE_PICK);
         }
         else{
             this.setContentView(R.layout.activity_game_environment);
-            ((TextView) findViewById(R.id.commandDisplay)).setText("YOU A SUCKA");
+            ((TextView) findViewById(R.id.commandDisplay)).setText("Your score is\n" + Integer.toString(score));
         }
 
     }
