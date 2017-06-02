@@ -2,20 +2,13 @@ package iobopdat.github.nediamond.bopdat;
 
 import android.app.Activity;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Window;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.content.Context;
 import android.content.Intent;
 
 
-public class game_environment extends Activity {
+public class GameActivity extends Activity {
     final int MOVE_PICK = 1;
 
     @Override
@@ -23,7 +16,7 @@ public class game_environment extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.setContentView(R.layout.activity_game_environment);
-        Intent intent = new Intent(game_environment.this,MoveActivity.class);
+        Intent intent = new Intent(GameActivity.this,MoveActivity.class);
         startActivityForResult(intent,MOVE_PICK);
     }
 
