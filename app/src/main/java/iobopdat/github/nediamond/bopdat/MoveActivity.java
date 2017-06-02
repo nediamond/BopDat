@@ -28,7 +28,6 @@ public class MoveActivity extends BaseMoveActivity implements SensorEventListene
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.setContentView(R.layout.activity_game_environment);
         ((TextView) findViewById(R.id.commandDisplay)).setText("Move Dat");
-
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mSensorManager.registerListener(this, mSensor , SensorManager.SENSOR_DELAY_NORMAL);
@@ -52,11 +51,11 @@ public class MoveActivity extends BaseMoveActivity implements SensorEventListene
         ((TextView) findViewById(R.id.commandDisplay1)).setText(Float.toString(linear_acceleration[1]));
         ((TextView) findViewById(R.id.commandDisplay2)).setText(Float.toString(linear_acceleration[2]));
 
-        int thresh = 5;
+        int thresh = 10;
         if (Math.abs(linear_acceleration[0]) > thresh ||
                 Math.abs(linear_acceleration[1]) > thresh ||
                 Math.abs(linear_acceleration[2]) > thresh) {
-            Intent intent = new Intent();
+            //Intent intent = new Intent();
             setResult(Activity.RESULT_OK);
             finish();
         }

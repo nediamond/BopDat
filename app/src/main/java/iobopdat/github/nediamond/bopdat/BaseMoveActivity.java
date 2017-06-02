@@ -13,5 +13,10 @@ import android.os.Bundle;
  */
 
 public abstract class BaseMoveActivity extends Activity {
+    private SensorManager mSensorManager;
+    private Sensor mSensor;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
 
 }
