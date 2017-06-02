@@ -12,17 +12,18 @@
         android:id="@+id/commandDisplay"
         android:layout_width="391dp"
         android:layout_height="193dp"
-        android:text="DEFAULT TEXT"
+        android:fontFamily="casual"
         android:textAlignment="center"
         android:textSize="51sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintLeft_creator="1"
         app:layout_constraintVertical_bias="0.54"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
         tools:layout_editor_absoluteY="241dp" />
 
 </android.support.constraint.ConstraintLayout>
