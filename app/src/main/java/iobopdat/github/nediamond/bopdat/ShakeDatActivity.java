@@ -50,7 +50,14 @@ public class ShakeDatActivity extends BaseMoveActivity{
         linear_acceleration[1] = event.values[1] - gravity[1];
         linear_acceleration[2] = event.values[2] - gravity[2];
 
-        if (Math.abs(linear_acceleration[0]) > 4) {
+        if (linear_acceleration[2] < -10 || Math.abs(linear_acceleration[1])>10) {
+            //Intent intent = new Intent();
+            setResult(Activity.RESULT_CANCELED);
+            this.mSensorManager.unregisterListener(this);
+            finish();
+        }
+
+        else if (Math.abs(linear_acceleration[0]) > 4) {
             //Intent intent = new Intent();
             setResult(Activity.RESULT_OK);
             this.mSensorManager.unregisterListener(this);

@@ -51,7 +51,20 @@ public class PushDatActivity extends BaseMoveActivity{
         linear_acceleration[2] = event.values[2] - gravity[2];
 
 
-        if (linear_acceleration[1] < -2.5) {
+
+        if (Math.abs(linear_acceleration[0]) > 10) {
+            //Intent intent = new Intent();
+            setResult(Activity.RESULT_CANCELED);
+            this.mSensorManager.unregisterListener(this);
+            finish();
+        }
+        else if (linear_acceleration[2] < -10||linear_acceleration[2]>12) {
+            //Intent intent = new Intent();
+            setResult(Activity.RESULT_CANCELED);
+            this.mSensorManager.unregisterListener(this);
+            finish();
+        }
+        else if (linear_acceleration[1] < -2.5) {
             //Intent intent = new Intent();
             setResult(Activity.RESULT_OK);
             this.mSensorManager.unregisterListener(this);
