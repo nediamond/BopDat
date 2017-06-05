@@ -5,7 +5,10 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.widget.TextView;
+
+import java.util.Locale;
 
 /**
  * Created by zach_meyer on 5/26/17.
@@ -21,6 +24,16 @@ public class PushDatActivity extends BaseMoveActivity{
         ((TextView) findViewById(R.id.commandDisplay)).setText("Push Dat");
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mSensorManager.registerListener(this, mSensor , SensorManager.SENSOR_DELAY_NORMAL);
+
+        t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener(){
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    t1.setLanguage(Locale.UK);
+                    t1.speak("Push Dat", TextToSpeech.QUEUE_FLUSH, null);
+                }
+            }
+        });
     }
 
     @Override

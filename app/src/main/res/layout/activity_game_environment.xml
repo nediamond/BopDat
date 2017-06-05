@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context="iobopdat.github.nediamond.bopdat.GameActivity"
     tools:layout_editor_absoluteY="0dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:layout_editor_absoluteX="0dp"
+    android:keepScreenOn="true">
 
     <TextView
         android:id="@+id/commandDisplay"

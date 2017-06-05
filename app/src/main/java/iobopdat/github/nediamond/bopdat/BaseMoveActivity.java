@@ -9,6 +9,8 @@ import android.hardware.SensorEvent;
 import android.view.Window;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.speech.tts.TextToSpeech;
+import java.util.Locale;
 
 
 /**
@@ -18,6 +20,7 @@ import android.os.CountDownTimer;
 public abstract class BaseMoveActivity extends Activity  implements SensorEventListener {
     SensorManager mSensorManager;
     Sensor mSensor;
+    TextToSpeech t1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,10 @@ public abstract class BaseMoveActivity extends Activity  implements SensorEventL
 
     @Override
     protected void onPause() {
+        if(t1 !=null){
+            t1.stop();
+            t1.shutdown();
+        }
         super.onPause();
         this.mSensorManager.unregisterListener(this);
     }
