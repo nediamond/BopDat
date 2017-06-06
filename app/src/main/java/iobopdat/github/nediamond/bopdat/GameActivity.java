@@ -4,7 +4,9 @@ import android.app.Activity;
 
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.TextView;
 import android.content.Intent;
 
@@ -43,7 +45,17 @@ public class GameActivity extends Activity {
         }
         else{
             this.setContentView(R.layout.activity_game_environment);
-            ((TextView) findViewById(R.id.commandDisplay)).setText("Your score is\n" + Integer.toString(score));
+            ((TextView) findViewById(R.id.commandDisplay)).setText("Your Score is\n" +
+                    Integer.toString(score) + "\nTap for Menu");
+
+
+            ((TextView) findViewById(R.id.commandDisplay)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }
+            });
         }
 
     }
