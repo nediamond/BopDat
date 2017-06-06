@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class GameActivity extends Activity {
     final int MOVE_PICK = 1;
-    final int LIFT_DAT=0, PUSH_DAT=1, PULL_DAT=2, SHAKE_DAT=3;
+    final int LIFT_DAT=0, PUSH_DAT=1, PULL_DAT=2, SHAKE_DAT=3, TAP_DAT=4;
     Random rand;
     int score = 0;
 
@@ -49,7 +49,7 @@ public class GameActivity extends Activity {
     }
 
     private Intent chooseMove() {
-        int choice = rand.nextInt(4);
+        int choice = rand.nextInt(5);
         Intent intent;
         switch (choice) {
             case LIFT_DAT:
@@ -63,6 +63,9 @@ public class GameActivity extends Activity {
                 break;
             case SHAKE_DAT:
                 intent = new Intent(GameActivity.this, ShakeDatActivity.class);
+                break;
+            case TAP_DAT:
+                intent = new Intent(GameActivity.this, TapDatActivity.class);
                 break;
             default:
                 intent = new Intent(GameActivity.this, MainActivity.class);

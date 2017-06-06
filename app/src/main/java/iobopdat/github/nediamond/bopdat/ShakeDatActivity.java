@@ -29,7 +29,7 @@ public class ShakeDatActivity extends BaseMoveActivity{
             @Override
             public void onInit(int status) {
                 if(status != TextToSpeech.ERROR) {
-                    t1.setLanguage(Locale.UK);
+                    t1.setLanguage(Locale.US);
                     t1.speak("Shake Dat", TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
