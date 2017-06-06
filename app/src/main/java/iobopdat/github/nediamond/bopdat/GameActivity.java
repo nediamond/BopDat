@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class GameActivity extends Activity {
     final int MOVE_PICK = 1;
-    final int LIFT_DAT=0, PUSH_DAT=1, PULL_DAT=2, SHAKE_DAT=3, TAP_DAT=4;
+    final int LIFT_DAT=0, PUSH_DAT=1, PULL_DAT=2, SHAKE_DAT=3, BOP_DAT =4;
     Random rand;
     int score = 0;
 
@@ -79,7 +79,7 @@ public class GameActivity extends Activity {
             case SHAKE_DAT:
                 intent = new Intent(GameActivity.this, ShakeDatActivity.class);
                 break;
-            case TAP_DAT:
+            case BOP_DAT:
                 intent = new Intent(GameActivity.this, BopDatActivity.class);
                 break;
             default:
