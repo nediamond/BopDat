@@ -31,6 +31,12 @@ public class GameActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         //wait(1000);
+        for(int i = 0;i<15000;i++) {
+            int k = 0;
+            for (int j = 0; j < 18000; j++) {
+                int l = 0;
+            }
+        }
         if(requestCode == MOVE_PICK && resultCode == RESULT_OK){
             score++;
             startActivityForResult(chooseMove(), MOVE_PICK);
