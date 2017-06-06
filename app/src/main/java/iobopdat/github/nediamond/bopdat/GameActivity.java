@@ -48,15 +48,12 @@ public class GameActivity extends Activity {
         else{
             this.setContentView(R.layout.activity_game_environment);
 
-            ((TextView) findViewById(R.id.commandDisplay)).setText("Your Score is\n" +
-                    Integer.toString(score));
+            ((TextView) findViewById(R.id.commandDisplay)).setText("Your Score is\n" + Integer.toString(score));
 
-
-            ((TextView) findViewById(R.id.commandDisplay)).setOnClickListener(new View.OnClickListener() {
+            findViewById(R.id.gameLayout).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
+                    finish();
                 }
             });
 
