@@ -24,7 +24,7 @@ import java.util.Random;
  * Created by zach_meyer on 5/26/17.
  */
 
-public class TapDatActivity extends Activity{
+public class BopDatActivity extends Activity{
     TextToSpeech t1;
 
     // These should really be in an abstract class
@@ -46,14 +46,14 @@ public class TapDatActivity extends Activity{
                 finish();
             }
         }.start();
-        ((TextView) findViewById(R.id.commandDisplay)).setText("Tap Dat");
+        ((TextView) findViewById(R.id.commandDisplay)).setText("Bop Dat");
 
         t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if (status != TextToSpeech.ERROR) {
                     t1.setLanguage(Locale.US);
-                    t1.speak("Tap Dat", TextToSpeech.QUEUE_FLUSH, null);
+                    t1.speak("Bop Dat", TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
         });

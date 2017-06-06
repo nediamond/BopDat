@@ -2,12 +2,12 @@ package iobopdat.github.nediamond.bopdat;
 
 import android.app.Activity;
 
+
 import android.content.SharedPreferences;
+
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.TextView;
 import android.content.Intent;
 
@@ -17,7 +17,7 @@ import java.util.Random;
 public class GameActivity extends Activity {
     final String PREFS_NAME = "prefs_name";
     final int MOVE_PICK = 1;
-    final int LIFT_DAT=0, PUSH_DAT=1, PULL_DAT=2, SHAKE_DAT=3, TAP_DAT=4;
+    final int LIFT_DAT=0, PUSH_DAT=1, PULL_DAT=2, SHAKE_DAT=3, BOP_DAT =4;
     Random rand;
     int score = 0;
 
@@ -91,8 +91,8 @@ public class GameActivity extends Activity {
             case SHAKE_DAT:
                 intent = new Intent(GameActivity.this, ShakeDatActivity.class);
                 break;
-            case TAP_DAT:
-                intent = new Intent(GameActivity.this, TapDatActivity.class);
+            case BOP_DAT:
+                intent = new Intent(GameActivity.this, BopDatActivity.class);
                 break;
             default:
                 intent = new Intent(GameActivity.this, MainActivity.class);
