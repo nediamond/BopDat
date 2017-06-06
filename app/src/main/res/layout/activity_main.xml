@@ -15,7 +15,7 @@
         android:layout_width="203dp"
         android:layout_height="98dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="159dp"
+        android:layout_marginBottom="247dp"
         android:background="#232528"
         android:text="Play!"
         android:textColor="#009ffd"
@@ -25,18 +25,37 @@
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1" />
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintHorizontal_bias="0.502" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="131dp"
+        android:layout_marginTop="73dp"
         android:gravity="right|bottom"
         android:text="Bop-Dat"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         android:textColor="#232528"
         android:textSize="76sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="421dp"
+        android:gravity="right|bottom"
+        android:text="High Score = "
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:textColor="#232528"
+        android:textSize="38sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

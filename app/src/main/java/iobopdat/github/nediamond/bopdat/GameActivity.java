@@ -2,6 +2,7 @@ package iobopdat.github.nediamond.bopdat;
 
 import android.app.Activity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
@@ -14,6 +15,7 @@ import java.util.Random;
 
 
 public class GameActivity extends Activity {
+    final String PREFS_NAME = "prefs_name";
     final int MOVE_PICK = 1;
     final int LIFT_DAT=0, PUSH_DAT=1, PULL_DAT=2, SHAKE_DAT=3, TAP_DAT=4;
     Random rand;
@@ -45,6 +47,7 @@ public class GameActivity extends Activity {
         }
         else{
             this.setContentView(R.layout.activity_game_environment);
+
             ((TextView) findViewById(R.id.commandDisplay)).setText("Your Score is\n" +
                     Integer.toString(score) + "\nTap for Menu");
 
@@ -56,6 +59,12 @@ public class GameActivity extends Activity {
                     startActivity(intent);
                 }
             });
+
+            SharedPreferences myPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+            SharedPreferences.Editor editor = myPreferences.edit();
+            if(myPreferences.getInt("highScore", -1) < score)
+                editor.putInt("highScore", score);
+                editor.apply();
         }
 
     }
