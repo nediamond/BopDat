@@ -24,7 +24,11 @@ public class MainActivity extends Activity {
         highScore = (TextView) findViewById(R.id.textView2);
 
         int j = myPreferences.getInt("highScore", -1);
-        highScore.setText("High Score = " + j);
+        if (j == -1)
+            highScore.setText("");
+        else
+            highScore.setText("High Score: " + j);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
