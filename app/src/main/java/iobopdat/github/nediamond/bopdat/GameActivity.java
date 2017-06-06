@@ -3,7 +3,6 @@ package iobopdat.github.nediamond.bopdat;
 import android.app.Activity;
 
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.view.Window;
 import android.widget.TextView;
 import android.content.Intent;
@@ -71,7 +70,7 @@ public class GameActivity extends Activity {
                 intent = new Intent(GameActivity.this, ShakeDatActivity.class);
                 break;
             case TAP_DAT:
-                intent = new Intent(GameActivity.this, TapDatActivity.class);
+                intent = new Intent(GameActivity.this, BopDatActivity.class);
                 break;
             default:
                 intent = new Intent(GameActivity.this, MainActivity.class);

@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".GameActivity" />
-        <activity android:name=".TapDatActivity" />
+        <activity android:name=".BopDatActivity" />
         <activity android:name=".PushDatActivity" />
         <activity android:name=".PullDatActivity" />
         <activity android:name=".ShakeDatActivity" />
