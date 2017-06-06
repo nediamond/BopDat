@@ -49,7 +49,7 @@ public class GameActivity extends Activity {
             this.setContentView(R.layout.activity_game_environment);
 
             ((TextView) findViewById(R.id.commandDisplay)).setText("Your Score is\n" +
-                    Integer.toString(score) + "\nTap for Menu");
+                    Integer.toString(score));
 
 
             ((TextView) findViewById(R.id.commandDisplay)).setOnClickListener(new View.OnClickListener() {
