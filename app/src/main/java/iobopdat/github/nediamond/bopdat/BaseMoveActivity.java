@@ -2,15 +2,20 @@ package iobopdat.github.nediamond.bopdat;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.hardware.SensorEventListener;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
-import android.hardware.SensorEvent;
+import android.support.constraint.ConstraintLayout;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.Window;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.speech.tts.TextToSpeech;
-import java.util.Locale;
+import android.widget.TextView;
+
+import java.util.Random;
 
 
 /**
@@ -21,6 +26,8 @@ public abstract class BaseMoveActivity extends Activity  implements SensorEventL
     SensorManager mSensorManager;
     Sensor mSensor;
     TextToSpeech t1;
+    private static final String[] BG_COLOR_CHOICES = {"#232528", "#eaf6ff"};
+    private static final String[] TXT_COLOR_CHOICES = {"#542cc1", "#ffa400", "#009ffd"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +43,28 @@ public abstract class BaseMoveActivity extends Activity  implements SensorEventL
                 finish();
             }
         }.start();
+
+        Random rand = new Random();
+        int  bg_col = Color.parseColor(BG_COLOR_CHOICES[rand.nextInt(BG_COLOR_CHOICES.length)]);
+        int  txt_col = Color.parseColor(TXT_COLOR_CHOICES[rand.nextInt(TXT_COLOR_CHOICES.length)]);
+
+        ((TextView) findViewById(R.id.commandDisplay)).setTextColor(txt_col);
+        findViewById(R.id.gameLayout).setBackgroundColor(bg_col);
+
+        // Because this class is used for Accel. based moves, it should fail if screen is touched
+        final BaseMoveActivity that = this;
+        ConstraintLayout gameLayout = (ConstraintLayout) findViewById(R.id.gameLayout);
+        gameLayout.setOnTouchListener(
+                new ConstraintLayout.OnTouchListener() {
+                    public boolean onTouch(View view, MotionEvent event) {
+                        setResult(Activity.RESULT_CANCELED);
+                        that.mSensorManager.unregisterListener(that);
+                        finish();
+                        return true;
+                    }
+                }
+        );
+
     }
 
     @Override
@@ -52,4 +81,5 @@ public abstract class BaseMoveActivity extends Activity  implements SensorEventL
         super.onPause();
         this.mSensorManager.unregisterListener(this);
     }
+
 }

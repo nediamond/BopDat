@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context="iobopdat.github.nediamond.bopdat.MainActivity"
     tools:layout_editor_absoluteY="0dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:layout_editor_absoluteX="0dp"
+    android:background="#009ffd">
 
     <Button
         android:id="@+id/playButton"
@@ -15,9 +16,9 @@
         android:layout_height="98dp"
         android:layout_gravity="center"
         android:layout_marginBottom="159dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="#232528"
         android:text="Play!"
-        android:textColor="@android:color/background_light"
+        android:textColor="#009ffd"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -34,7 +35,7 @@
         android:gravity="right|bottom"
         android:text="Bop-Dat"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="#232528"
         android:textSize="76sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
