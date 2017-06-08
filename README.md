@@ -1,4 +1,4 @@
-# Bop Dat is an accelerometer-based game similar to the kids' toy Bop-It
+### Bop Dat is an accelerometer-based game similar to the kids' toy BopIt.
 
 ## Move list
 
